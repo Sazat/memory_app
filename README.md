@@ -67,3 +67,19 @@ Les fichiers dans Model sont chargés de requêter en base de données
 Les fichiers dans Controller appellent les fichiers Model et leur méthode, selon les besoins.
 
 Tout le code est commenté.
+
+## Concepts abordés
+- SCSS/CSS : structurer son code
+- JS/JQuery
+  - manipulation d'objets
+  - Ajax
+- PHPMySQL
+  - include, require, notion de routeur  
+  - création de class
+  - fonction hydrate
+  - getters et setters
+  - héritage
+  - instanciation d'objets
+  - connexion à une base de données avec l'extension PDO
+  - insertion d'entrées
+  - récupération de données
