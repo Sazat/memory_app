@@ -16,8 +16,7 @@ Le but est de créer le jeu Memory.
     précisions CSS : SASS ou autre préprocesseur encouragé.
     précisions JS : L’utilisation d’une librairie (au hasard, jQuery) est acceptée, pour faciliter la gestion d'événements et les modifications du DOM.
   - Faire la persistance des données côté back : PHP ou Node.js
-    Choisis le langage qui te permettra le mieux de répondre à l’exercice.
-    Ton application doit être codée en objet .  
+    Ton application doit être codée en objet.
   - Cartes à jouer
   https://static.oclock.io/challenges/tests-techniques/cards.png
   - Charte graphique
@@ -48,3 +47,23 @@ npm run sass
 sass --watch ./public/sass/main.scss:./public/css/style.css --style compressed
 ````
 - Ne pas oublier d'interrompre le script après un changement (ctrl + C) avant relancer un "npm run sass"
+
+### Front-end
+- HTML5 et SCSS
+- Utilisation de JQuery
+- Le fichier script.js contient toutes les fonctions qui servent à créer le jeu et le gérer
+
+### Back-end
+- utilisation de WAMP
+- Base de données PHPMySQL
+- Version PHP : 7.4.26
+- Version PHPMySQL : 5.1.1
+- Version du serveur : 5.7.36
+- Un fichier memory.sql se trouve à la racine du projet, utilisez-le pour créer la base de données et des tables avec quelques données
+
+Le code est orienté objet et permet d'enregistrer une partie (Game) ainsi que les cartes liées à cette partie en base de données
+Une mini-architecture MVC a été mise en place
+Les fichiers dans Model sont chargés de requêter en base de données
+Les fichiers dans Controller appellent les fichiers Model et leur méthode, selon les besoins.
+
+Tout le code est commenté.
