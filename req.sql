@@ -1,0 +1,1 @@
+CREATE TABLE `memory`.`game` ( `id` INT NOT NULL AUTO_INCREMENT , `player_name` VARCHAR(150) NOT NULL , `duration` INT NOT NULL , PRIMARY KEY (`id`)) ENGINE = MyISAM;

@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Source+Sans+Pro&display=swap');
+$repo-images : '../image/';
+
+$font-family-title : 'Italiana', serif;
+$font-family-content : 'Source Sans Pro', sans-serif;
+
+$border: 5px solid transparent;
+$border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+$border-image-slice: 1;
+
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;  
+}
+  
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1, h2{
+  font-family: $font-family-title;
+}
+
+p,li {
+  font-family: $font-family-content;
+}
+
+.container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// liste des meilleurs scores
+#list-scores {
+  border: $border;
+  border-image: $border-image;
+  border-image-slice: $border-image-slice;
+  padding: 20px;
+  >.score {
+    list-style: none;
+    .rank {
+      font-size: 1.2em;
+      font-weight: bold;
+      color:#2c90fc
+    }
+  }
+}
+// bouton Go
+.go-play {
+  text-align: center;
+  margin-top: 50px;
+  padding: 10px;
+  >.go-play-button {
+    padding: 10px 50px;
+    font-size: 2em;
+    background-color: #2c90FC;
+    color: white;
+    border: solid;
+    text-decoration: none;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+#game {
+  display: none;
+}
+
+// Board
+.board { 
+    margin: 0 auto 10px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -5px -5px 8px rgba(227, 146, 235, 0.288),
+              4px 4px 6px rgba(227, 146, 235, 0.288);
+    // Blocage des événements "mouse"
+    &.blocked  {
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  }
+// Les Cartes
+.row-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+}
+.col-cards {
+    margin:1px;
+    border: $border;
+    border-image: $border-image;
+    border-image-slice: $border-image-slice;
+
+    height:100px;
+    min-width: 100px;
+    background-image:url($repo-images+'/cards.png');
+    background-repeat: no-repeat;
+    background-size: 100px 1800px; //dimensions de l'image cards.png
+    background-position: center 100px;
+    background-color: rgb(245, 210, 215);
+    border-radius: 10px;
+    cursor: pointer;
+  
+    &.flipped  {
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    @media screen and (max-width: 480px) {
+      min-width: 25px;
+      height:25px;
+      background-size: 25px 450px;
+    }
+    @media screen and (min-width: 481px) and (max-width: 768px) {
+      min-width: 50px;
+      height:50px;
+      background-size: 50px 900px;
+    }
+    @media screen and (min-width: 769px) and (max-width: 1024px) {
+      min-width: 90px;
+      height:90px;
+    }
+  }
+
+  .shadow {
+    box-shadow: 0px 45px 50px rgba(0, 0, 0, 0.25); 
+}
+
+// ***** PROGRESSION BAR *****
+
+#time-play {
+  font-size: 1.7em;
+  text-align: center;
+  >p {
+    #time-play p {
+      font-size: 1.5em;
+    }
+  }
+}
+
+.progress-wrap {
+  background: linear-gradient(to right, #5FC3E4, #E55D87);
+  margin: 20px 0;
+  overflow: hidden;
+  position: relative;
+  border-radius:25px;
+  .progress-bar {
+    background: #ddd;
+    left: 0;
+    position: absolute;
+    top: 0;
+  }
+}
+
+.progress {
+  width: 100%;
+  height: 50px;
+}
+
+#message-player {
+  text-align: center;
+  >p {
+    font-size: 1.8em;
+    &.loser {
+      color: red;
+    }
+    &.winner {
+      color: green;
+    }
+  }
+}
+
+// Page 404
+.wrong-place {
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}
