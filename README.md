@@ -83,3 +83,8 @@ Tout le code est commenté.
   - connexion à une base de données avec l'extension PDO
   - insertion d'entrées
   - récupération de données
+
+## Aller plus loin
+- Ajouter une Class Joueur
+- Enregistrer les joueurs et leurs parties, les afficher (jointure de table)
+- Créer un historique des parties
